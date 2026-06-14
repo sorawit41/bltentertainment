@@ -544,6 +544,10 @@
   .stats-grid {
     grid-template-columns: 1fr;
   }
+  .showcase-content h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
 }
 
 /* Home Restaurant Section wrapper */
@@ -744,6 +748,22 @@
   .recommend-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .idol-recommend-card {
+    flex-direction: column;
+    height: auto;
+  }
+  .recommend-img-box {
+    width: 100%;
+    height: 220px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-primary);
+  }
+  .recommend-details-box {
+    width: 100%;
   }
 }
 

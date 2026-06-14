@@ -37,6 +37,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 body::before {
@@ -199,6 +201,12 @@ p {
 
 .card-premium:hover::before {
   transform: scaleX(1);
+}
+
+@media (max-width: 575px) {
+  .card-premium {
+    padding: 24px 16px;
+  }
 }
 
 /* Toast styling */

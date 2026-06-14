@@ -351,6 +351,24 @@
   }
 }
 
+@media (max-width: 575px) {
+  .roster-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  .roster-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .roster-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
 /* VJ Coming Soon styles */
 .vj-coming-soon-container {
   display: flex;

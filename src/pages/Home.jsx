@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Users, Radio, Sparkles, UtensilsCrossed, CalendarRange } from 'lucide-react';
 import Restaurant from './Restaurant';
@@ -17,6 +17,11 @@ import nkw5 from './idol/642350367_122123254947044109_3787483135081983527_n.jpg'
 import nkw6 from './idol/642764479_122123406183044109_5476955826149977402_n.jpg';
 import nkw7 from './idol/643910046_122123507829044109_1541260632037446351_n.jpg';
 import nkw8 from './idol/654210016_122125918065044109_5562220628365902512_n.jpg';
+import hsr1 from "./idol/hisser/hisser.official_3828624751947066563's2026-6-15-1.28.681 story.webp";
+import hsr2 from "./idol/hisser/hisser.official_3828627560729855508's2026-6-15-1.28.215 story.webp";
+import hsr3 from "./idol/hisser/hisser.official_3828630533459573611's2026-6-15-1.28.807 story.webp";
+import hsr4 from "./idol/hisser/hisser.official_3872342638662242209's2026-6-15-1.28.758 story.jpg";
+import hsr5 from "./idol/hisser/hisser.official_3872346461954846593's2026-6-15-1.28.975 story.jpg";
 import './Home.css';
 
 export default function Home() {
@@ -36,16 +41,24 @@ export default function Home() {
     }
   }, [location]);
 
-  const recommendedIdols = [
-    { name: 'Rosalyn', desc: '★ NEKOWINK', img: nkw1, group: 'NEKOWINK', color: '#ff44aa' },
-    { name: 'Moolek', desc: '★ NEKOWINK', img: nkw2, group: 'NEKOWINK', color: '#ffcc00' },
-    { name: 'Marin', desc: '★ NEKOWINK', img: nkw3, group: 'NEKOWINK', color: '#ffffff' },
-    { name: 'Yuki', desc: '★ NEKOWINK', img: nkw4, group: 'NEKOWINK', color: '#333333' },
-    { name: 'Poka', desc: '★ NEKOWINK', img: nkw5, group: 'NEKOWINK', color: '#44aaff' },
-    { name: 'Rei', desc: '★ NEKOWINK', img: nkw6, group: 'NEKOWINK', color: '#ff88bb' },
-    { name: 'Ayumi', desc: '★ NEKOWINK', img: nkw7, group: 'NEKOWINK', color: '#aa66ff' },
-    { name: 'Aina', desc: '★ NEKOWINK', img: nkw8, group: 'NEKOWINK', color: '#66cc88' },
-  ];
+  const recommendedIdols = useMemo(() => {
+    const list = [
+      { name: 'Rosalyn', desc: '★ NEKOWINK', img: nkw1, group: 'NEKOWINK', color: '#ff44aa' },
+      { name: 'Moolek', desc: '★ NEKOWINK', img: nkw2, group: 'NEKOWINK', color: '#ffcc00' },
+      { name: 'Marin', desc: '★ NEKOWINK', img: nkw3, group: 'NEKOWINK', color: '#ffffff' },
+      { name: 'Yuki', desc: '★ NEKOWINK', img: nkw4, group: 'NEKOWINK', color: '#333333' },
+      { name: 'Poka', desc: '★ NEKOWINK', img: nkw5, group: 'NEKOWINK', color: '#44aaff' },
+      { name: 'Rei', desc: '★ NEKOWINK', img: nkw6, group: 'NEKOWINK', color: '#ff88bb' },
+      { name: 'Ayumi', desc: '★ NEKOWINK', img: nkw7, group: 'NEKOWINK', color: '#aa66ff' },
+      { name: 'Aina', desc: '★ NEKOWINK', img: nkw8, group: 'NEKOWINK', color: '#66cc88' },
+      { name: 'Rhea', desc: '★ HISSER', img: hsr1, group: 'HISSER', color: '#ff2222' },
+      { name: 'Vicky', desc: '★ HISSER', img: hsr2, group: 'HISSER', color: '#aa1111' },
+      { name: 'Ruby', desc: '★ HISSER', img: hsr3, group: 'HISSER', color: '#cc0000' },
+      { name: 'Rayne', desc: '★ HISSER', img: hsr4, group: 'HISSER', color: '#880000' },
+      { name: 'Rayla', desc: '★ HISSER', img: hsr5, group: 'HISSER', color: '#ee1133' },
+    ];
+    return list.sort(() => Math.random() - 0.5);
+  }, []);
 
   const handlePrevCarousel = () => {
     setCarouselIndex((prev) => (prev === 0 ? recommendedIdols.length - 2 : prev - 1));
@@ -150,7 +163,8 @@ export default function Home() {
                     <span className="band-subtitle">GENRE: FUTURE ELECTRO-POP</span>
                   </div>
                   <p className="band-desc-text">
-                    วงไอดอลน้องใหม่ไฟแรง "hisser" ที่กำลังเป็นกระแสในขณะนี้ ด้วยแนวเพลง Future Electro-Pop ที่ขับเคลื่อนด้วยจังหวะซินธ์บีทสุดล้ำและการประสานเสียงที่เป็นเอกลักษณ์
+                    HISSER Official Instagram<br />
+                    from BLT World Entertainment
                   </p>
                   <p className="band-desc-text">
                     ร่วมสัมผัสเสน่ห์และความสดใหม่ของพวกเขากับมิวสิกวิดีโอเพลงเปิดตัวยอดนิยมที่เล่นโดยอัตโนมัติอยู่ด้านข้างนี้ได้เลย

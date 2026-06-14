@@ -23,6 +23,8 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
 }
 
 .brand-sub {
@@ -166,7 +168,8 @@
 
 @media (max-width: 575px) {
   .restaurant-title {
-    font-size: 36px;
+    font-size: 28px;
+    letter-spacing: 0;
   }
   
   .details-card {
