@@ -1,0 +1,415 @@
+.vj-header {
+  margin-top: 60px;
+}
+
+.vj-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+/* Stream Simulator styling */
+.stream-simulator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.simulator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: 12px;
+}
+
+.live-pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+}
+
+.pulse-icon {
+  animation: pulseRed 1.5s infinite;
+}
+
+@keyframes pulseRed {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.viewer-count {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Video Player container */
+.video-player {
+  position: relative;
+  background-color: #000000;
+  border: 1px solid var(--border-secondary);
+  height: 480px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.video-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-image: radial-gradient(circle at center, #111111 0%, #000000 100%);
+}
+
+.spinning-ring {
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+  margin-bottom: 20px;
+}
+
+.streamer-logo {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  top: calc(50% - 44px);
+}
+
+.streamer-tag {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  text-align: left;
+}
+
+.streamer-tag h5 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.streamer-tag p {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Live stream chat layout */
+.stream-chat {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 80%, transparent);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 250px;
+}
+
+.chat-messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 150px;
+  padding-right: 5px;
+}
+
+.chat-message {
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.chat-message strong {
+  color: var(--text-secondary);
+  margin-right: 6px;
+}
+
+.chat-message span {
+  color: #ffffff;
+}
+
+.system-msg strong {
+  color: #ffffff;
+}
+
+.system-msg span {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chat-form {
+  display: flex;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-primary);
+  padding: 6px 12px;
+}
+
+.chat-form input {
+  width: 100%;
+  font-size: 12px;
+  outline: none;
+  background: none;
+}
+
+.chat-form button {
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.chat-form button:hover {
+  color: #ffffff;
+}
+
+.heart-btn {
+  background-color: #ffffff;
+  color: #000000;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.heart-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Heart animations flight overlay */
+.hearts-container {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  width: 100px;
+  height: 300px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.heart-icon-fly {
+  position: absolute;
+  bottom: 0;
+  animation: floatUp 1.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-250px) scale(1.5); opacity: 0; }
+}
+
+/* Talent roster directory style */
+.vj-roster h3 {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.roster-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roster-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.roster-card.active-room {
+  border-color: #ffffff;
+  background-color: var(--bg-tertiary);
+}
+
+.roster-avatar {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.roster-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.roster-top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.roster-top h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.status-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+}
+
+.tag-live {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.tag-offline {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid var(--border-primary);
+}
+
+.roster-handle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.roster-desc-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.roster-schedule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.click-to-watch {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-top: 8px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+  .vj-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* VJ Coming Soon styles */
+.vj-coming-soon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(80vh - 120px);
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.vj-coming-soon-card {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.coming-soon-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 6px 12px;
+  background-color: #000000;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.coming-soon-title {
+  font-size: 32px;
+  margin-top: 10px;
+  letter-spacing: 0.05em;
+}
+
+.coming-soon-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.coming-soon-icon {
+  margin: 10px 0;
+}
+
+.pulse-icon-coming {
+  animation: pulseComing 2s infinite ease-in-out;
+  color: #000000;
+}
+
+@keyframes pulseComing {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+.coming-soon-btn {
+  margin-top: 10px;
+  padding: 14px 40px;
+}
